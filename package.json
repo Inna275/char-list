@@ -1,0 +1,23 @@
+{
+  "name": "char-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inna275/char-list.git"
+  },
+  "author": "Inna Denysiuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inna275/char-list/issues"
+  },
+  "homepage": "https://github.com/Inna275/char-list#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
