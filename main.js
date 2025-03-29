@@ -45,3 +45,9 @@ console.log(list.clone());
 list.append('b');
 list.reverse();
 console.log(list.elements);
+
+list.append('a');
+console.log(list.findFirst('a'));
+console.log(list.findLast('a'));
+console.log(list.findFirst('c'));
+console.log(list.findLast('c'));

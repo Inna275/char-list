@@ -53,6 +53,14 @@ class ArrayList {
   reverse() {
     this.elements.reverse();
   }
+
+  findFirst(element) {
+    return this.elements.indexOf(element);
+  }
+
+  findLast(element) {
+    return this.elements.lastIndexOf(element);
+  }
 }
 
 export { ArrayList };
