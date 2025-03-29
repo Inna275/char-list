@@ -39,3 +39,5 @@ console.log(list.elements);
 
 console.log(list.get(0));
 tryCatchWrapper(() => list.get(10));
+
+console.log(list.clone()); 

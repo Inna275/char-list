@@ -1,8 +1,8 @@
 import { validateElement, validateIndex } from './validation.js';
 
 class ArrayList {
-  constructor() {
-    this.elements = [];
+  constructor(elements = []) {
+    this.elements = elements;
   }
 
   length() {
@@ -44,6 +44,10 @@ class ArrayList {
   get(index) {
     validateIndex(index, this.length());
     return this.elements[index];
+  }
+
+  clone() {
+    return new ArrayList([...this.elements]);
   }
 }
 
