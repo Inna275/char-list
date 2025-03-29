@@ -61,6 +61,17 @@ class ArrayList {
   findLast(element) {
     return this.elements.lastIndexOf(element);
   }
+
+  clear() {
+    this.elements = [];
+  }
+
+  extend(elements) {
+    if (!(elements instanceof ArrayList)) {
+      return;
+    } 
+    this.elements.push(...elements.elements);
+  }
 }
 
 export { ArrayList };

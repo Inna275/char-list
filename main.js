@@ -51,3 +51,11 @@ console.log(list.findFirst('a'));
 console.log(list.findLast('a'));
 console.log(list.findFirst('c'));
 console.log(list.findLast('c'));
+
+const list2 = new ArrayList(['h', 'e', 'l', 'l', 'o']);
+
+list.extend(list2);
+console.log(list.elements);
+
+list.clear();
+console.log(list.elements);
