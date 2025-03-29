@@ -1,4 +1,4 @@
-import { isChar, isValidIndex } from './utils.js';
+const { isChar, isValidIndex } = require('./utils.js');
 
 const validateElement = (element) => {
   if (!isChar(element)) {
@@ -12,4 +12,4 @@ const validateIndex = (index, length) => {
   }
 };
 
-export { validateElement, validateIndex };
+module.exports = { validateElement, validateIndex };

@@ -1,4 +1,4 @@
-import { ArrayList } from './src/list.js'
+const { ArrayList } = require('./src/list.js');
 
 const list = new ArrayList();
 

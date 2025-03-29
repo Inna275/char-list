@@ -1,4 +1,4 @@
-import { validateElement, validateIndex } from './validation.js';
+const { validateElement, validateIndex } = require('./validation.js');
 
 class ArrayList {
   constructor(elements = []) {
@@ -74,4 +74,4 @@ class ArrayList {
   }
 }
 
-export { ArrayList };
+module.exports = { ArrayList };

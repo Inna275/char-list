@@ -6,4 +6,4 @@ const isValidIndex = (index, length) => {
   return Number.isInteger(index) && index >= 0 && index < length;
 };
 
-export { isChar, isValidIndex };
+module.exports = { isChar, isValidIndex };
