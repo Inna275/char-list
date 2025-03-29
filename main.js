@@ -2,60 +2,46 @@ import { ArrayList } from './src/list.js'
 
 const list = new ArrayList();
 
-const tryCatchWrapper = (fn) => {
-  try {
-    fn();
-  } catch (err) {
-    console.error(err.message);
-  }
-};
-
-console.log("Length:", list.length());
+console.log("Initial length:", list.length());
 
 list.append('a');
-console.log(list.elements);
-console.log("Length:", list.length());
+console.log("List after appending 'a':", list.elements);
 
-tryCatchWrapper(() => list.append(1));
+console.log("Length:", list.length());
 
 list.insert('b', 0);
-console.log(list.elements);
-
-tryCatchWrapper(() => list.insert('c', -1));
-tryCatchWrapper(() => list.insert('d', 10));
+console.log("List after inserting 'b' at index 0", list.elements);
 
 list.delete(0);
-console.log(list.elements);
+console.log("List after deleting element at index 0:", list.elements);
 
-tryCatchWrapper(() => list.delete(5));
+list.append('e');
+list.append('e');
+list.append('e');
+console.log("List after appending 'e' three times:", list.elements);
 
-list.insert('e', 0);
-list.insert('e', 0);
-list.insert('e', 0);
-console.log(list.elements);
+list.deleteAll('e');
+console.log("List after deleting all 'e':", list.elements);
 
-list.deleteAll('e')
-console.log(list.elements);
+console.log("Element at index 0:", list.get(0));
 
-console.log(list.get(0));
-tryCatchWrapper(() => list.get(10));
-
-console.log(list.clone()); 
+console.log("Cloned list:", list.clone().elements);
 
 list.append('b');
+console.log("List before reversing:", list.elements);
 list.reverse();
-console.log(list.elements);
+console.log("List after reversing:", list.elements);
 
 list.append('a');
-console.log(list.findFirst('a'));
-console.log(list.findLast('a'));
-console.log(list.findFirst('c'));
-console.log(list.findLast('c'));
+console.log("List after appending 'a':", list.elements);
+console.log("First occurrence of 'a':", list.findFirst('a'));
+console.log("Last occurrence of 'a':", list.findLast('a'));
 
 const list2 = new ArrayList(['h', 'e', 'l', 'l', 'o']);
+console.log("New list to extend with:", list2.elements);
 
 list.extend(list2);
-console.log(list.elements);
+console.log("List after extending:", list.elements);
 
 list.clear();
-console.log(list.elements);
+console.log("List after clearing:", list.elements);
