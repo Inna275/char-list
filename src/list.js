@@ -40,6 +40,11 @@ class ArrayList {
       }
     }
   }
+
+  get(index) {
+    validateIndex(index, this.length());
+    return this.elements[index];
+  }
 }
 
 export { ArrayList };
