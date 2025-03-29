@@ -12,7 +12,7 @@ console.log("Length:", list.length());
 list.insert('b', 0);
 console.log("List after inserting 'b' at index 0", list.elements);
 
-list.delete(0);
+console.log("Deleted element:", list.delete(0));
 console.log("List after deleting element at index 0:", list.elements);
 
 list.append('e');
