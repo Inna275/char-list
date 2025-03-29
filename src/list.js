@@ -1,4 +1,4 @@
-import { isChar } from './utils.js';
+import { validateElement, validateIndex } from './validation.js';
 
 class ArrayList {
   constructor() {
@@ -10,10 +10,14 @@ class ArrayList {
   }
 
   append(element) {
-    if (!isChar(element)) {
-      throw new Error("Element is not a char");
-    }
+    validateElement(element);
     this.elements.push(element);
+  }
+
+  insert(element, index) {
+    validateElement(element);
+    validateIndex(index, this.length());
+    this.elements.splice(index, 0, element);
   }
 }
 
