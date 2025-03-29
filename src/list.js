@@ -49,6 +49,10 @@ class ArrayList {
   clone() {
     return new ArrayList([...this.elements]);
   }
+
+  reverse() {
+    this.elements.reverse();
+  }
 }
 
 export { ArrayList };

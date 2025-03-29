@@ -41,3 +41,7 @@ console.log(list.get(0));
 tryCatchWrapper(() => list.get(10));
 
 console.log(list.clone()); 
+
+list.append('b');
+list.reverse();
+console.log(list.elements);
