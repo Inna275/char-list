@@ -37,7 +37,10 @@ console.log("List after appending 'a':", list.elements);
 console.log("First occurrence of 'a':", list.findFirst('a'));
 console.log("Last occurrence of 'a':", list.findLast('a'));
 
-const list2 = new ArrayList(['h', 'e', 'l', 'l', 'o']);
+const list2 = new ArrayList();
+list2.append('j');
+list2.append('s');
+
 console.log("New list to extend with:", list2.elements);
 
 list.extend(list2);

@@ -1,8 +1,8 @@
 const { validateElement, validateIndex } = require('./validation.js');
 
 class ArrayList {
-  constructor(elements = []) {
-    this.elements = elements;
+  constructor() {
+    this.elements = [];
   }
 
   length() {
@@ -47,7 +47,13 @@ class ArrayList {
   }
 
   clone() {
-    return new ArrayList([...this.elements]);
+    const copy = new ArrayList();
+
+    for (let i = 0; i < this.elements.length; i++) {
+      copy.append(this.elements[i]);
+    }
+
+    return copy;
   }
 
   reverse() {
