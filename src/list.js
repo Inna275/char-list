@@ -181,8 +181,14 @@ class DoublyLinkedList {
   extend(elements) {
     if (!(elements instanceof DoublyLinkedList)) {
       return;
-    } 
-    this.elements.push(...elements.elements);
+    }
+  
+    let current = elements.head;
+  
+    while (current) {
+      this.append(current.element);
+      current = current.next;
+    }
   }
 }
 
