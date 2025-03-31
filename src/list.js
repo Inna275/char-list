@@ -30,7 +30,34 @@ class DoublyLinkedList {
   insert(element, index) {
     validateElement(element);
     validateIndex(index, this.length());
-    this.elements.splice(index, 0, element);
+
+    const newNode = new Node(element);
+
+    if (index === 0) {
+      newNode.next = this.head;
+      if (this.head) this.head.prev = newNode;
+      this.head = newNode;
+      if (!this.tail) this.tail = newNode;
+      
+    } else if (index === this.size) {
+      this.tail.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
+
+    } else {
+      let current = this.head;
+
+      for (let i = 0; i < index; i++) {
+        current = current.next;
+      }
+
+      newNode.next = current;
+      newNode.prev = current.prev;
+      current.prev.next = newNode;
+      current.prev = newNode;
+    }
+
+    this.size++;
   }
 
   delete(index) {
