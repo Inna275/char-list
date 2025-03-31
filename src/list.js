@@ -173,7 +173,9 @@ class DoublyLinkedList {
   }
 
   clear() {
-    this.elements = [];
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
   }
 
   extend(elements) {
