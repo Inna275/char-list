@@ -147,11 +147,29 @@ class DoublyLinkedList {
   }
 
   findFirst(element) {
-    return this.elements.indexOf(element);
+    let current = this.head;
+    let index = 0;
+  
+    while (current) {
+      if (current.element === element) return index;
+      current = current.next;
+      index++;
+    }
+  
+    return -1;
   }
 
   findLast(element) {
-    return this.elements.lastIndexOf(element);
+    let current = this.tail;
+    let index = this.size - 1;
+  
+    while (current) {
+      if (current.element === element) return index;
+      current = current.prev;
+      index--;
+    }
+  
+    return -1;
   }
 
   clear() {
