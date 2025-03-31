@@ -122,11 +122,11 @@ class DoublyLinkedList {
 
   clone() {
     const copy = new DoublyLinkedList();
-
-    for (let i = 0; i < this.elements.length; i++) {
-      copy.append(this.elements[i]);
+  
+    for (let current = this.head; current !== null; current = current.next) {
+      copy.append(current.element);
     }
-
+  
     return copy;
   }
 
