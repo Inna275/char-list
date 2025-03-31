@@ -157,8 +157,9 @@ describe('ArrayList', () => {
   test('extend() adds elements of another list to the current list', () => {
     list.append('j');
     
-    const list2 = new ArrayList(['s']);
-    
+    const list2 = new ArrayList();
+    list2.append('s');
+
     list.extend(list2);
     
     expect(list.length()).toBe(2);
@@ -168,7 +169,8 @@ describe('ArrayList', () => {
   test('after extend(), the first list does not change when the second list is updated', () => {
     list.append('j');
 
-    const list2 = new ArrayList(['s']);
+    const list2 = new ArrayList();
+    list2.append('s');
     
     list.extend(list2);
     
