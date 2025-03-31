@@ -1,10 +1,10 @@
-const { ArrayList } = require('../src/list.js');
+const DoublyLinkedList = require('../src/list.js');
 
-describe('ArrayList', () => {
+describe('DoublyLinkedList', () => {
   let list;
 
   beforeEach(() => {
-    list = new ArrayList();
+    list = new DoublyLinkedList();
   });
 
   test('length() returns 0 for empty list', () => {
@@ -157,7 +157,7 @@ describe('ArrayList', () => {
   test('extend() adds elements of another list to the current list', () => {
     list.append('j');
     
-    const list2 = new ArrayList();
+    const list2 = new DoublyLinkedList();
     list2.append('s');
 
     list.extend(list2);
@@ -169,7 +169,7 @@ describe('ArrayList', () => {
   test('after extend(), the first list does not change when the second list is updated', () => {
     list.append('j');
 
-    const list2 = new ArrayList();
+    const list2 = new DoublyLinkedList();
     list2.append('s');
     
     list.extend(list2);

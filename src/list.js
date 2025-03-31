@@ -1,8 +1,10 @@
 const { validateElement, validateIndex } = require('./validation.js');
 
-class ArrayList {
+class DoublyLinkedList {
   constructor() {
-    this.elements = [];
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
   }
 
   length() {
@@ -47,7 +49,7 @@ class ArrayList {
   }
 
   clone() {
-    const copy = new ArrayList();
+    const copy = new DoublyLinkedList();
 
     for (let i = 0; i < this.elements.length; i++) {
       copy.append(this.elements[i]);
@@ -73,11 +75,11 @@ class ArrayList {
   }
 
   extend(elements) {
-    if (!(elements instanceof ArrayList)) {
+    if (!(elements instanceof DoublyLinkedList)) {
       return;
     } 
     this.elements.push(...elements.elements);
   }
 }
 
-module.exports = { ArrayList };
+module.exports = DoublyLinkedList;

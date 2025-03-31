@@ -1,6 +1,6 @@
-const { ArrayList } = require('./src/list.js');
+const DoublyLinkedList = require('./src/list.js');
 
-const list = new ArrayList();
+const list = new DoublyLinkedList();
 
 console.log("Initial length:", list.length());
 
@@ -37,7 +37,7 @@ console.log("List after appending 'a':", list.elements);
 console.log("First occurrence of 'a':", list.findFirst('a'));
 console.log("Last occurrence of 'a':", list.findLast('a'));
 
-const list2 = new ArrayList();
+const list2 = new DoublyLinkedList();
 list2.append('j');
 list2.append('s');
 
