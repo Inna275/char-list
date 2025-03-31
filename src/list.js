@@ -38,23 +38,18 @@ class DoublyLinkedList {
       if (this.head) this.head.prev = newNode;
       this.head = newNode;
       if (!this.tail) this.tail = newNode;
-      
-    } else if (index === this.size) {
-      this.tail.next = newNode;
-      newNode.prev = this.tail;
-      this.tail = newNode;
-
+    
     } else {
       let current = this.head;
 
-      for (let i = 0; i < index; i++) {
+      for (let i = 0; i < index - 1; i++) {
         current = current.next;
       }
 
-      newNode.next = current;
-      newNode.prev = current.prev;
-      current.prev.next = newNode;
-      current.prev = newNode;
+      newNode.next = current.next;
+      newNode.prev = current;
+      if (current.next) current.next.prev = newNode;
+      current.next = newNode;
     }
 
     this.size++;
@@ -62,28 +57,67 @@ class DoublyLinkedList {
 
   delete(index) {
     validateIndex(index, this.length());
-    const deleted = this.elements.splice(index, 1)[0];
-    return deleted;
+
+    let current = this.head;
+
+    if (index === 0) {
+      this.head = current.next;
+      if (this.head) this.head.prev = null;
+      if (this.head === null) this.tail = null;
+
+    } else {
+      for (let i = 0; i < index; i++) {
+        current = current.next;
+      }
+  
+      if (current.prev) current.prev.next = current.next;
+      if (current.next) current.next.prev = current.prev;
+  
+      if (current === this.tail) {
+        this.tail = current.prev;
+      }
+    }
+
+    this.size--;
+    return current.element;
   }
 
   deleteAll(element) {
     validateElement(element);
 
-    if (!this.elements.includes(element)) {
-      return;
-    }
+    let current = this.head;
 
-    for (let i = 0; i < this.elements.length; i++) {
-      if (this.elements[i] === element) {
-        this.elements.splice(i, 1);
-        i--;
+    while (current) {
+      if (current.element === element) {
+        if (current.prev) {
+          current.prev.next = current.next;
+        } else {
+          this.head = current.next;
+        }
+  
+        if (current.next) {
+          current.next.prev = current.prev;
+        } else {
+          this.tail = current.prev;
+        }
+  
+        this.size--;
       }
+  
+      current = current.next;
     }
   }
 
   get(index) {
     validateIndex(index, this.length());
-    return this.elements[index];
+
+    let current = this.head;
+  
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+
+    return current.element;
   }
 
   clone() {
