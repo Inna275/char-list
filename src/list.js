@@ -8,7 +8,7 @@ class DoublyLinkedList {
   }
 
   length() {
-    return this.elements.length;
+    return this.size;
   }
 
   append(element) {
