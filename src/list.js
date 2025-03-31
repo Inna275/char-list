@@ -131,7 +131,19 @@ class DoublyLinkedList {
   }
 
   reverse() {
-    this.elements.reverse();
+    let current = this.head;
+    let temp = null;
+  
+    while (current) {
+      temp = current.next;
+      current.next = current.prev;
+      current.prev = temp;
+      current = current.prev;
+    }
+  
+    temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
   }
 
   findFirst(element) {
