@@ -29,6 +29,7 @@ class DoublyLinkedList {
 
   insert(element, index) {
     validateElement(element);
+    validateIndex(index, this.length());
 
     const newNode = new Node(element);
 
