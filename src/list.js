@@ -1,3 +1,4 @@
+const Node = require('./node.js');
 const { validateElement, validateIndex } = require('./validation.js');
 
 class DoublyLinkedList {
@@ -13,7 +14,17 @@ class DoublyLinkedList {
 
   append(element) {
     validateElement(element);
-    this.elements.push(element);
+
+    const newNode = new Node(element, this.tail);
+  
+    if (!this.head) { 
+      this.head = this.tail = newNode;
+    } else { 
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+
+    this.size++;
   }
 
   insert(element, index) {
