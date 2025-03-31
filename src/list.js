@@ -190,6 +190,18 @@ class DoublyLinkedList {
       current = current.next;
     }
   }
+
+  toString() {
+    let current = this.head;
+    let result = [];
+
+    while (current) {
+      result.push(current.element);
+      current = current.next;
+    }
+
+    return result.join(" ⇄ ");
+  }
 }
 
 module.exports = DoublyLinkedList;
